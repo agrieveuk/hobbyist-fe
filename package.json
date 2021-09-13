@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "npx eslint ./ --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "npx eslint ./ --fix"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/agrieveuk/hobbyist.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
