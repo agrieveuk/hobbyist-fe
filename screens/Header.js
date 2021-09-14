@@ -6,7 +6,6 @@ export default function Header() {
     <View style={styles.container}>
       <Text style={styles.header}>Hobbyist</Text>
       <Button
-        title="Filter Search"
         color="#841584"
         accessibilityLabel="Learn more about this purple button"
       />
