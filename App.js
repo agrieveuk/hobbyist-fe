@@ -1,9 +1,15 @@
 import React from "react";
 // import { StyleSheet } from "react-native";
 import Header from "./screens/Header";
+import Homepage from "./screens/Homepage";
 
 export default function App() {
-  return <Header />;
+  return (
+    <>
+      <Header />
+      <Homepage />
+    </>
+  );
 }
 
 // const styles = StyleSheet.create({

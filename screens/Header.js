@@ -16,10 +16,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
+    height: 20,
+    marginBottom: 0,
     // justifyContent: "center",
   },
   header: {
     padding: 40,
     fontSize: 40,
+  },
+  button: {
+    color: "#841584",
   },
 });
