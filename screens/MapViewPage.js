@@ -13,7 +13,7 @@ export default function MapViewPage() {
           latitude: 53.384067,
           longitude: -2.551836,
           latitudeDelta: 0.1,
-          longitudeDelta: 0.1,
+          longitudeDelta: 0.1
         }}
       >
         <MapView.Marker
@@ -53,11 +53,11 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'flex-start',
+    justifyContent: 'flex-start'
   },
   map: {
     marginTop: 20,
     width: '90%',
-    height: '50%',
-  },
+    height: '50%'
+  }
 });

@@ -8,7 +8,7 @@ export default function ClubPage({ navigation, route }) {
       <Image
         style={styles.image}
         source={{
-          uri: 'https://images.unsplash.com/flagged/photo-1576448438685-9f5e5b283d4f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+          uri: 'https://images.unsplash.com/flagged/photo-1576448438685-9f5e5b283d4f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
         }}
       />
 
@@ -23,10 +23,10 @@ const styles = StyleSheet.create({
     marginTop: 20,
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   image: {
     width: '80%',
-    height: '50%',
-  },
+    height: '50%'
+  }
 });

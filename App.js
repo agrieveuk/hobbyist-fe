@@ -27,16 +27,16 @@ const HomeStackScreen = () => (
   <HomeStack.Navigator
     screenOptions={({ navigation }) => ({
       headerStyle: {
-        backgroundColor: '#5C6BC0',
+        backgroundColor: '#5C6BC0'
       },
       headerTintColor: '#fff',
-      headerRight: () => (
+      headerRight: function () {
         <Button
           onPress={() => navigation.toggleDrawer()}
           title="--------"
           color="black"
-        />
-      ),
+        />;
+      }
     })}
   >
     <HomeStack.Screen
@@ -44,7 +44,7 @@ const HomeStackScreen = () => (
       component={Homepage}
       options={{
         title: 'Hobbyist',
-        headerTitleAlign: 'center',
+        headerTitleAlign: 'center'
       }}
     />
     <HomeStack.Screen
@@ -52,7 +52,7 @@ const HomeStackScreen = () => (
       component={ClubPage}
       options={({ route }) => ({
         title: route.params.club,
-        headerTitleAlign: 'center',
+        headerTitleAlign: 'center'
       })}
     />
     <HomeStack.Screen name="MapViewPage" component={MapViewPage} />
@@ -62,16 +62,16 @@ const SearchStackScreen = () => (
   <SearchStack.Navigator
     screenOptions={({ navigation }) => ({
       headerStyle: {
-        backgroundColor: '#5C6BC0',
+        backgroundColor: '#5C6BC0'
       },
       headerTintColor: '#fff',
-      headerRight: () => (
+      headerRight: function () {
         <Button
           onPress={() => navigation.toggleDrawer()}
           title="--------"
           color="black"
-        />
-      ),
+        />;
+      }
     })}
   >
     <SearchStack.Screen name="Search" component={Search} />
@@ -81,7 +81,7 @@ const SearchStackScreen = () => (
 const TabsStackScreen = () => (
   <Tabs.Navigator
     screenOptions={{
-      headerShown: false,
+      headerShown: false
     }}
   >
     <Tabs.Screen name="Home" component={HomeStackScreen} />
@@ -94,16 +94,16 @@ const ProfileStackScreen = () => (
   <ProfileStack.Navigator
     screenOptions={({ navigation }) => ({
       headerStyle: {
-        backgroundColor: '#5C6BC0',
+        backgroundColor: '#5C6BC0'
       },
       headerTintColor: '#fff',
-      headerRight: () => (
+      headerRight: function () {
         <Button
           onPress={() => navigation.toggleDrawer()}
           title="--------"
           color="black"
-        />
-      ),
+        />;
+      }
     })}
   >
     <ProfileStack.Screen name="Profile" component={Profile} />
@@ -129,7 +129,7 @@ export default function App() {
       signOut: () => {
         setIsLoading(false);
         setUserToken(null);
-      },
+      }
     };
   }, []);
 
@@ -146,7 +146,7 @@ export default function App() {
         {userToken ? (
           <Drawer.Navigator
             screenOptions={{
-              headerShown: false,
+              headerShown: false
             }}
           >
             <Drawer.Screen name="home" component={TabsStackScreen} />
@@ -164,7 +164,7 @@ export default function App() {
               component={createAnAccount}
               options={{
                 title: 'Create An Account',
-                headerTitleAlign: 'center',
+                headerTitleAlign: 'center'
               }}
             />
           </AuthStack.Navigator>

@@ -10,15 +10,15 @@ const screens = {
   Homepage: {
     screen: Homepage,
     navigationOptions: {
-      title: 'Hobbyist',
-    },
+      title: 'Hobbyist'
+    }
   },
   ClubPage: {
-    screen: ClubPage,
+    screen: ClubPage
   },
   MapViewPage: {
-    screen: MapViewPage,
-  },
+    screen: MapViewPage
+  }
 };
 
 const HomeStack = createStackNavigator(screens, {
@@ -27,9 +27,9 @@ const HomeStack = createStackNavigator(screens, {
     headerStyle: { height: 125 },
     headerTitleAlign: 'center',
     headerTitleStyle: {
-      fontSize: 30,
-    },
-  },
+      fontSize: 30
+    }
+  }
 });
 
 export default createAppContainer(HomeStack);
