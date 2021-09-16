@@ -10,24 +10,26 @@ const screens = {
   Homepage: {
     screen: Homepage,
     navigationOptions: {
-      headerTitle: function () {
-        <Header />;
-      }
-    }
+      title: 'Hobbyist',
+    },
   },
   ClubPage: {
-    screen: ClubPage
+    screen: ClubPage,
   },
   MapViewPage: {
-    screen: MapViewPage
-  }
+    screen: MapViewPage,
+  },
 };
 
 const HomeStack = createStackNavigator(screens, {
   defaultNavigationOptions: {
     headerTintColor: '#444',
-    headerStyle: { height: 175 }
-  }
+    headerStyle: { height: 125 },
+    headerTitleAlign: 'center',
+    headerTitleStyle: {
+      fontSize: 30,
+    },
+  },
 });
 
 export default createAppContainer(HomeStack);

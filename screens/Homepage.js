@@ -11,18 +11,11 @@ export default function Homepage({ navigation }) {
     { clubName: 'clubName6' },
     { clubName: 'clubName7' },
     { clubName: 'clubName8' },
-    { clubName: 'clubName9' }
+    { clubName: 'clubName9' },
   ]);
 
   return (
     <View style={styles.container}>
-      <Button
-        color="#3737"
-        style={styles.button}
-        accessibilityLabel="Learn more about this purple button"
-        title="Map View"
-        onPress={() => navigation.navigate('MapViewPage')}
-      />
       <Text>Clubs You May Be Interested In:</Text>
 
       <ScrollView>
@@ -34,7 +27,9 @@ export default function Homepage({ navigation }) {
                 color="#841584"
                 accessibilityLabel="Learn more about this purple button"
                 title={`Go to ${club.clubName}`}
-                onPress={() => navigation.navigate('ClubPage', club)}
+                onPress={() =>
+                  navigation.navigate('ClubPage', { club: club.clubName })
+                }
               />
             </View>
           );
@@ -48,14 +43,14 @@ const styles = StyleSheet.create({
     marginTop: 20,
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   club: {
     marginTop: 24,
     padding: 30,
     backgroundColor: 'pink',
-    fontSize: 24
-  }
+    fontSize: 24,
+  },
   // li: {
   //   width: 400,
   //   height: 200
