@@ -1,30 +1,61 @@
-import React from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function Header() {
+  const [findSearchOpen, setFindSearchOpen] = useState(false);
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Hobbyist</Text>
+    <View style={styles.header}>
+      <Text style={styles.headerText}>Hobbyist</Text>
       <Button
         color="#841584"
+        style={styles.button}
         accessibilityLabel="Learn more about this purple button"
+        title="Find Search"
+        onPress={() => setFindSearchOpen(true)}
       />
+      {findSearchOpen && (
+        <Button
+          color="blue"
+          style={styles.button}
+          accessibilityLabel="Learn more about this purple button"
+          title="submit"
+          onPress={() => {
+            setFindSearchOpen(false);
+          }}
+        />
+      )}
     </View>
   );
 }
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    height: 20,
-    marginBottom: 0,
-    // justifyContent: "center",
-  },
   header: {
-    padding: 40,
+    width: '100%',
+    height: '100%',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  headerText: {
+    fontWeight: 'bold',
     fontSize: 40,
-  },
-  button: {
-    color: "#841584",
-  },
+    letterSpacing: 1
+  }
 });
+
+// <Button
+// color="#841584"
+// style={styles.button}
+// accessibilityLabel="Learn more about this purple button"
+// title="Find Search"
+// onPress={() => setFindSearchOpen(true)}
+// />
+// {findSearchOpen && (
+// <Button
+//   color="blue"
+//   style={styles.button}
+//   accessibilityLabel="Learn more about this purple button"
+//   title="submit"
+//   onPress={() => setFindSearchOpen(false)}
+// />
+// )}

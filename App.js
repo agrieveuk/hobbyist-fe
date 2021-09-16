@@ -1,22 +1,30 @@
-import React from "react";
-// import { StyleSheet } from "react-native";
-import Header from "./screens/Header";
-import Homepage from "./screens/Homepage";
+import React, { useState } from 'react';
+// import { StyleSheet } from 'react-native';
+// import Header from './screens/Header';
+// import Homepage from './screens/Homepage';
+import RequireLogin from './screens/RequireLogin';
+import Navigator from './routes/homeStack';
+import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
+  const [user, setUser] = useState(false);
+
   return (
-    <>
-      <Header />
-      <Homepage />
-    </>
+    <NavigationContainer>
+      <RequireLogin user={user} setUser={setUser}>
+        <Navigator />
+      </RequireLogin>
+    </NavigationContainer>
   );
 }
-
+// <Header
+//           setFindSearchOpen={setFindSearchOpen}
+//           findSearchOpen={findSearchOpen}
+//         />
 // const styles = StyleSheet.create({
 //   container: {
 //     flex: 1,
-//     backgroundColor: "#fff",
-//     alignItems: "center",
-//     justifyContent: "center",
+//     justifyContent: 'center',
+//     alignItems: 'center',
 //   },
 // });
