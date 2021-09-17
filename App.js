@@ -68,7 +68,7 @@ const SearchStackScreen = () => (
         backgroundColor: '#5C6BC0'
       },
       headerTintColor: '#fff',
-      headerRight: function () {
+      headerRight: function headerRight() {
         return (
           <Button
             onPress={() => navigation.toggleDrawer()}
@@ -128,7 +128,7 @@ const ProfileStackScreen = () => (
         backgroundColor: '#5C6BC0'
       },
       headerTintColor: '#fff',
-      headerRight: function () {
+      headerRight: function headerRight() {
         return (
           <Button
             onPress={() => navigation.toggleDrawer()}
