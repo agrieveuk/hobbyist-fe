@@ -16,6 +16,7 @@ import ClubPage from './screens/ClubPage';
 import MapViewPage from './screens/MapViewPage';
 import Profile from './routes/Profile';
 import Splash from './screens/Splash';
+import { Ionicons } from '@expo/vector-icons';
 import { AuthContext } from './context';
 
 const AuthStack = createNativeStackNavigator();
@@ -30,12 +31,14 @@ const HomeStackScreen = () => (
         backgroundColor: '#5C6BC0'
       },
       headerTintColor: '#fff',
-      headerRight: function () {
-        <Button
-          onPress={() => navigation.toggleDrawer()}
-          title="--------"
-          color="black"
-        />;
+      headerRight: function headerRight() {
+        return (
+          <Button
+            onPress={() => navigation.toggleDrawer()}
+            title="--------"
+            color="black"
+          />
+        );
       }
     })}
   >
@@ -66,11 +69,13 @@ const SearchStackScreen = () => (
       },
       headerTintColor: '#fff',
       headerRight: function () {
-        <Button
-          onPress={() => navigation.toggleDrawer()}
-          title="--------"
-          color="black"
-        />;
+        return (
+          <Button
+            onPress={() => navigation.toggleDrawer()}
+            title="--------"
+            color="black"
+          />
+        );
       }
     })}
   >
@@ -81,11 +86,37 @@ const SearchStackScreen = () => (
 const TabsStackScreen = () => (
   <Tabs.Navigator
     screenOptions={{
-      headerShown: false
+      headerShown: false,
+      tabBarOptions: {
+        showLabel: false
+      },
+      tabBarActiveTintColor: 'white',
+      tabBarInactiveTintColor: 'lightgray',
+      tabBarActiveBackgroundColor: '#5C6BC0',
+      tabBarInactiveBackgroundColor: '#939dd5',
+      tabBarStyle: [
+        {
+          display: 'flex'
+        },
+        null
+      ]
     }}
   >
-    <Tabs.Screen name="Home" component={HomeStackScreen} />
-    <Tabs.Screen name="Search" component={SearchStackScreen} />
+    <Tabs.Screen
+      name="TabHome"
+      component={HomeStackScreen}
+      options={{ title: 'Home' }}
+      tabBarOptions={{
+        showIcon: false,
+        backgroundColor: 'green'
+      }}
+    />
+
+    <Tabs.Screen
+      name="TabSearch"
+      component={SearchStackScreen}
+      options={{ title: 'Search' }}
+    />
   </Tabs.Navigator>
 );
 
@@ -98,11 +129,13 @@ const ProfileStackScreen = () => (
       },
       headerTintColor: '#fff',
       headerRight: function () {
-        <Button
-          onPress={() => navigation.toggleDrawer()}
-          title="--------"
-          color="black"
-        />;
+        return (
+          <Button
+            onPress={() => navigation.toggleDrawer()}
+            title="--------"
+            color="black"
+          />
+        );
       }
     })}
   >
@@ -149,8 +182,16 @@ export default function App() {
               headerShown: false
             }}
           >
-            <Drawer.Screen name="home" component={TabsStackScreen} />
-            <Drawer.Screen name="Profile" component={ProfileStackScreen} />
+            <Drawer.Screen
+              name="DrawHome"
+              component={TabsStackScreen}
+              options={{ title: 'Home' }}
+            />
+            <Drawer.Screen
+              name="DrawProfile"
+              component={ProfileStackScreen}
+              options={{ title: 'Profile' }}
+            />
           </Drawer.Navigator>
         ) : (
           <AuthStack.Navigator>
