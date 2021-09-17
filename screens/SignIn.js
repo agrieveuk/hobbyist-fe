@@ -1,8 +1,8 @@
-import React, { useContext, useState } from "react";
-import { View, StyleSheet, Text, Button, TextInput } from "react-native";
-import { AuthContext } from "../context";
-import { Ionicons } from "@expo/vector-icons";
-import { Entypo } from "@expo/vector-icons";
+import React, { useContext, useState } from 'react';
+import { View, StyleSheet, Text, Button, TextInput } from 'react-native';
+import { AuthContext } from '../context';
+import { Ionicons } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 
 export default function SignIn({ navigation }) {
   const { signIn } = useContext(AuthContext);
@@ -49,7 +49,7 @@ export default function SignIn({ navigation }) {
         style={styles.button}
         accessibilityLabel="Create an Account"
         title="Create an Account"
-        onPress={() => navigation.navigate("signUp")}
+        onPress={() => navigation.navigate('signUp')}
       />
     </View>
   );
@@ -58,25 +58,25 @@ export default function SignIn({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   input: {
-    flexDirection: "row",
+    flexDirection: 'row',
     borderWidth: 1,
-    borderColor: "#777",
+    borderColor: '#777',
     padding: 8,
     margin: 10,
     width: 200,
     borderRadius: 20,
     height: 40,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   inputText: {
-    flex: 1,
+    flex: 1
   },
   button: {
-    fontSize: 100,
-  },
+    fontSize: 100
+  }
 });

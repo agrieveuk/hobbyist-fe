@@ -1,8 +1,8 @@
-import React, { useContext, useState } from "react";
-import { View, StyleSheet, Text, Button, TextInput } from "react-native";
-import { AuthContext } from "../context";
-import { Ionicons } from "@expo/vector-icons";
-import { Entypo } from "@expo/vector-icons";
+import React, { useContext, useState } from 'react';
+import { View, StyleSheet, Text, Button, TextInput } from 'react-native';
+import { AuthContext } from '../context';
+import { Ionicons } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 
 export default function CreatePersonalAccount({ navigation }) {
   const { signUp } = useContext(AuthContext);
@@ -88,29 +88,29 @@ export default function CreatePersonalAccount({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   enterDetailsTitle: {
     fontSize: 20,
-    marginBottom: 15,
+    marginBottom: 15
   },
   input: {
-    flexDirection: "row",
+    flexDirection: 'row',
     borderWidth: 1,
-    borderColor: "#777",
+    borderColor: '#777',
     padding: 8,
     margin: 10,
     width: 200,
     borderRadius: 20,
     height: 40,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   inputText: {
-    flex: 1,
+    flex: 1
   },
   button: {
-    fontSize: 100,
-  },
+    fontSize: 100
+  }
 });

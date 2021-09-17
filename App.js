@@ -1,24 +1,24 @@
-import React, { useState, useEffect, useMemo } from "react";
-import { Button, TouchableOpacity } from "react-native";
+import React, { useState, useEffect, useMemo } from 'react';
+import { Button, TouchableOpacity } from 'react-native';
 // import Header from './screens/Header';
 // import Homepage from './screens/Homepage';
-import RequireLogin from "./screens/RequireLogin";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import createAnAccount from "./screens/CreateAnAccount";
-import CreateBusinessAccount from "./screens/CreateBusinessAccount";
-import CreatePersonalAccount from "./screens/CreatePersonalAccount";
-import SignIn from "./screens/SignIn";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { createDrawerNavigator } from "@react-navigation/drawer";
-import Homepage from "./screens/Homepage";
-import Search from "./screens/Search";
-import ClubPage from "./screens/ClubPage";
-import MapViewPage from "./screens/MapViewPage";
-import Profile from "./screens/Profile";
-import Splash from "./screens/Splash";
-import { FontAwesome } from "@expo/vector-icons";
-import { AuthContext } from "./context";
+import RequireLogin from './screens/RequireLogin';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import createAnAccount from './screens/CreateAnAccount';
+import CreateBusinessAccount from './screens/CreateBusinessAccount';
+import CreatePersonalAccount from './screens/CreatePersonalAccount';
+import SignIn from './screens/SignIn';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import Homepage from './screens/Homepage';
+import Search from './screens/Search';
+import ClubPage from './screens/ClubPage';
+import MapViewPage from './screens/MapViewPage';
+import Profile from './screens/Profile';
+import Splash from './screens/Splash';
+import { FontAwesome } from '@expo/vector-icons';
+import { AuthContext } from './context';
 
 const AuthStack = createNativeStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -29,9 +29,9 @@ const HomeStackScreen = () => (
   <HomeStack.Navigator
     screenOptions={({ navigation }) => ({
       headerStyle: {
-        backgroundColor: "#5C6BC0",
+        backgroundColor: '#5C6BC0'
       },
-      headerTintColor: "#fff",
+      headerTintColor: '#fff',
       headerRight: function headerRight() {
         return (
           <FontAwesome
@@ -41,15 +41,15 @@ const HomeStackScreen = () => (
             onPress={() => navigation.toggleDrawer()}
           />
         );
-      },
+      }
     })}
   >
     <HomeStack.Screen
       name="Home"
       component={Homepage}
       options={{
-        title: "Hobbyist",
-        headerTitleAlign: "center",
+        title: 'Hobbyist',
+        headerTitleAlign: 'center'
       }}
     />
     <HomeStack.Screen
@@ -57,7 +57,7 @@ const HomeStackScreen = () => (
       component={ClubPage}
       options={({ route }) => ({
         title: route.params.club,
-        headerTitleAlign: "center",
+        headerTitleAlign: 'center'
       })}
     />
     <HomeStack.Screen name="MapViewPage" component={MapViewPage} />
@@ -67,10 +67,10 @@ const SearchStackScreen = () => (
   <SearchStack.Navigator
     screenOptions={({ navigation }) => ({
       headerStyle: {
-        backgroundColor: "#5C6BC0",
+        backgroundColor: '#5C6BC0'
       },
-      headerTintColor: "#fff",
-      headerRight: function () {
+      headerTintColor: '#fff',
+      headerRight: function headerRight() {
         return (
           <FontAwesome
             name="navicon"
@@ -79,7 +79,7 @@ const SearchStackScreen = () => (
             onPress={() => navigation.toggleDrawer()}
           />
         );
-      },
+      }
     })}
   >
     <SearchStack.Screen name="Search" component={Search} />
@@ -91,34 +91,34 @@ const TabsStackScreen = () => (
     screenOptions={{
       headerShown: false,
       tabBarOptions: {
-        showLabel: false,
+        showLabel: false
       },
-      tabBarActiveTintColor: "white",
-      tabBarInactiveTintColor: "lightgray",
-      tabBarActiveBackgroundColor: "#5C6BC0",
-      tabBarInactiveBackgroundColor: "#939dd5",
+      tabBarActiveTintColor: 'white',
+      tabBarInactiveTintColor: 'lightgray',
+      tabBarActiveBackgroundColor: '#5C6BC0',
+      tabBarInactiveBackgroundColor: '#939dd5',
       tabBarStyle: [
         {
-          display: "flex",
+          display: 'flex'
         },
-        null,
-      ],
+        null
+      ]
     }}
   >
     <Tabs.Screen
       name="TabHome"
       component={HomeStackScreen}
-      options={{ title: "Home" }}
+      options={{ title: 'Home' }}
       tabBarOptions={{
         showIcon: false,
-        backgroundColor: "green",
+        backgroundColor: 'green'
       }}
     />
 
     <Tabs.Screen
       name="TabSearch"
       component={SearchStackScreen}
-      options={{ title: "Search" }}
+      options={{ title: 'Search' }}
     />
   </Tabs.Navigator>
 );
@@ -128,10 +128,10 @@ const ProfileStackScreen = () => (
   <ProfileStack.Navigator
     screenOptions={({ navigation }) => ({
       headerStyle: {
-        backgroundColor: "#5C6BC0",
+        backgroundColor: '#5C6BC0'
       },
-      headerTintColor: "#fff",
-      headerRight: function () {
+      headerTintColor: '#fff',
+      headerRight: function headerRight() {
         return (
           <FontAwesome
             name="navicon"
@@ -140,7 +140,7 @@ const ProfileStackScreen = () => (
             onPress={() => navigation.toggleDrawer()}
           />
         );
-      },
+      }
     })}
   >
     <ProfileStack.Screen name="Profile" component={Profile} />
@@ -157,16 +157,16 @@ export default function App() {
     return {
       signIn: () => {
         setIsLoading(false);
-        setUserToken("abc");
+        setUserToken('abc');
       },
       signUp: () => {
         setIsLoading(false);
-        setUserToken("abc");
+        setUserToken('abc');
       },
       signOut: () => {
         setIsLoading(false);
         setUserToken(null);
-      },
+      }
     };
   }, []);
 
@@ -183,20 +183,20 @@ export default function App() {
         {userToken ? (
           <Drawer.Navigator
             screenOptions={{
-              drawerPosition: "right",
+              drawerPosition: 'right',
               headerShown: false,
-              drawerType: "front",
+              drawerType: 'front'
             }}
           >
             <Drawer.Screen
               name="DrawHome"
               component={TabsStackScreen}
-              options={{ title: "Home" }}
+              options={{ title: 'Home' }}
             />
             <Drawer.Screen
               name="DrawProfile"
               component={ProfileStackScreen}
-              options={{ title: "Profile" }}
+              options={{ title: 'Profile' }}
             />
           </Drawer.Navigator>
         ) : (
@@ -204,30 +204,30 @@ export default function App() {
             <AuthStack.Screen
               name="signIn"
               component={SignIn}
-              options={{ title: "Sign In", headerTitleAlign: "center" }}
+              options={{ title: 'Sign In', headerTitleAlign: 'center' }}
             />
             <AuthStack.Screen
               name="signUp"
               component={createAnAccount}
               options={{
-                title: "Create An Account",
-                headerTitleAlign: "center",
+                title: 'Create An Account',
+                headerTitleAlign: 'center'
               }}
             />
             <AuthStack.Screen
               name="CreateBusinessAccount"
               component={CreateBusinessAccount}
               options={{
-                title: "Create A Business Account",
-                headerTitleAlign: "center",
+                title: 'Create A Business Account',
+                headerTitleAlign: 'center'
               }}
             />
             <AuthStack.Screen
               name="CreatePersonalAccount"
               component={CreatePersonalAccount}
               options={{
-                title: "Create A Personal Account",
-                headerTitleAlign: "center",
+                title: 'Create A Personal Account',
+                headerTitleAlign: 'center'
               }}
             />
           </AuthStack.Navigator>

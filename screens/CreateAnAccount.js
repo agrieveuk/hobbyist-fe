@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
-import { View, StyleSheet, Text, Button, TouchableOpacity } from "react-native";
-import { AuthContext } from "../context";
-import { Ionicons, Entypo, FontAwesome5 } from "@expo/vector-icons";
+import React, { useContext } from 'react';
+import { View, StyleSheet, Text, Button, TouchableOpacity } from 'react-native';
+import { AuthContext } from '../context';
+import { Ionicons, Entypo, FontAwesome5 } from '@expo/vector-icons';
 
 export default function createAnAccount({ navigation }) {
   return (
@@ -14,7 +14,7 @@ export default function createAnAccount({ navigation }) {
             name="location"
             size={100}
             color="white"
-            onPress={() => navigation.navigate("CreateBusinessAccount")}
+            onPress={() => navigation.navigate('CreateBusinessAccount')}
           />
         </TouchableOpacity>
         <Text style={styles.accountDescription}>
@@ -29,7 +29,7 @@ export default function createAnAccount({ navigation }) {
             name="search-location"
             size={100}
             color="white"
-            onPress={() => navigation.navigate("CreatePersonalAccount")}
+            onPress={() => navigation.navigate('CreatePersonalAccount')}
           />
         </TouchableOpacity>
         <Text style={styles.accountDescription}>
@@ -44,39 +44,39 @@ export default function createAnAccount({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   selectAccount: {
-    fontSize: 20,
+    fontSize: 20
   },
   accountBoxBusiness: {
-    alignItems: "center",
-    backgroundColor: "rgb(4,122,156)",
+    alignItems: 'center',
+    backgroundColor: 'rgb(4,122,156)',
     margin: 20,
     width: 300,
-    borderRadius: 10,
+    borderRadius: 10
   },
   accountBoxPersonal: {
-    alignItems: "center",
-    backgroundColor: "rgb(0,166,159)",
+    alignItems: 'center',
+    backgroundColor: 'rgb(0,166,159)',
     margin: 20,
     width: 300,
-    borderRadius: 10,
+    borderRadius: 10
   },
   accountTitle: {
     fontSize: 30,
     marginBottom: 15,
-    color: "white",
-    marginTop: 15,
+    color: 'white',
+    marginTop: 15
   },
   accountDescription: {
-    textAlign: "center",
+    textAlign: 'center',
     fontSize: 15,
     marginTop: 15,
-    color: "white",
-    marginBottom: 15,
-  },
+    color: 'white',
+    marginBottom: 15
+  }
 });
 
 // <Button
