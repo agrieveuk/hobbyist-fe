@@ -4,17 +4,54 @@ import { AuthContext } from "../context";
 import { Ionicons } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 
-export default function SignIn({ navigation }) {
-  const { signIn } = useContext(AuthContext);
+export default function CreatePersonalAccount({ navigation }) {
+  const { signUp } = useContext(AuthContext);
   const [secure, setSecure] = useState(true);
   return (
     <View style={styles.container}>
-      <Text>Please Enter Your Username & Password: </Text>
+      <Text style={styles.enterDetailsTitle}>
+        Enter Your Personal Account Details Below:
+      </Text>
+      <Text>Enter Your Name:</Text>
+      <TextInput style={styles.input} placeholder="Your Name" required />
+      <Text>Enter A Username:</Text>
       <TextInput style={styles.input} placeholder="Username" required />
 
+      <Text>Enter Your Email Address:</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="example@example.com"
+        required
+      />
+      <Text>Enter A Password:</Text>
       <View style={styles.input}>
         <TextInput
           placeholder="Password"
+          secureTextEntry={secure}
+          style={styles.inputText}
+          required
+        />
+
+        {secure ? (
+          <Entypo
+            name="eye"
+            size={20}
+            color="gray"
+            onPress={() => setSecure(!secure)}
+          />
+        ) : (
+          <Entypo
+            name="eye-with-line"
+            size={20}
+            color="gray"
+            onPress={() => setSecure(!secure)}
+          />
+        )}
+      </View>
+      <Text>Confirm Password</Text>
+      <View style={styles.input}>
+        <TextInput
+          placeholder="Confirm Password"
           secureTextEntry={secure}
           style={styles.inputText}
           required
@@ -40,16 +77,9 @@ export default function SignIn({ navigation }) {
       <Button
         color="#3737"
         style={styles.button}
-        accessibilityLabel="Sign In"
-        title="Sign In"
-        onPress={() => signIn()}
-      />
-      <Button
-        color="#3737"
-        style={styles.button}
         accessibilityLabel="Create an Account"
-        title="Create an Account"
-        onPress={() => navigation.navigate("signUp")}
+        title="Create New Account"
+        onPress={() => signUp()}
       />
     </View>
   );
@@ -60,6 +90,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+  },
+  enterDetailsTitle: {
+    fontSize: 20,
+    marginBottom: 15,
   },
   input: {
     flexDirection: "row",
