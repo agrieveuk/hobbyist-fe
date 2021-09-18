@@ -20,48 +20,13 @@ import Splash from './screens/Splash';
 import { FontAwesome, AntDesign } from '@expo/vector-icons';
 import { AuthContext } from './context';
 
+import HomeStackScreen from './stacks/homeStack';
+
 const AuthStack = createNativeStackNavigator();
 const Tabs = createBottomTabNavigator();
-const HomeStack = createNativeStackNavigator();
+
 const SearchStack = createNativeStackNavigator();
 
-const HomeStackScreen = () => (
-  <HomeStack.Navigator
-    screenOptions={({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#5C6BC0',
-      },
-      headerTintColor: '#fff',
-      headerRight: function headerRight() {
-        return (
-          <FontAwesome
-            name="navicon"
-            size={24}
-            color="white"
-            onPress={() => navigation.toggleDrawer()}
-          />
-        );
-      },
-    })}
-  >
-    <HomeStack.Screen
-      name="Home"
-      component={Homepage}
-      options={{
-        title: 'Hobbyist',
-        headerTitleAlign: 'center',
-      }}
-    />
-    <HomeStack.Screen
-      name="ClubPage"
-      component={ClubPage}
-      options={({ route }) => ({
-        title: route.params.club,
-        headerTitleAlign: 'center',
-      })}
-    />
-  </HomeStack.Navigator>
-);
 const SearchStackScreen = () => (
   <SearchStack.Navigator
     screenOptions={({ navigation }) => ({
