@@ -11,7 +11,7 @@ export default function Homepage({ navigation }) {
     { clubName: 'clubName6' },
     { clubName: 'clubName7' },
     { clubName: 'clubName8' },
-    { clubName: 'clubName9' }
+    { clubName: 'clubName9' },
   ]);
 
   return (
@@ -43,14 +43,14 @@ const styles = StyleSheet.create({
     marginTop: 20,
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   club: {
     marginTop: 24,
     padding: 30,
     backgroundColor: 'pink',
-    fontSize: 24
-  }
+    fontSize: 24,
+  },
   // li: {
   //   width: 400,
   //   height: 200
