@@ -5,17 +5,13 @@ import createAnAccount from './screens/CreateAnAccount';
 import CreateBusinessAccount from './screens/CreateBusinessAccount';
 import CreatePersonalAccount from './screens/CreatePersonalAccount';
 import SignIn from './screens/SignIn';
-
 import { createDrawerNavigator } from '@react-navigation/drawer';
-
 import Splash from './screens/Splash';
-
 import { AuthContext } from './context';
 import TabsStackScreen from './stacks/tabsStack';
 import ProfileStackScreen from './stacks/profileStack';
 
 const AuthStack = createNativeStackNavigator();
-
 const Drawer = createDrawerNavigator();
 
 export default function App() {

@@ -10,7 +10,7 @@ const SearchStackScreen = () => (
   <SearchStack.Navigator
     screenOptions={({ navigation }) => ({
       headerStyle: {
-        backgroundColor: '#5C6BC0',
+        backgroundColor: '#5C6BC0'
       },
       headerTintColor: '#fff',
       headerRight: function headerRight() {
@@ -22,7 +22,7 @@ const SearchStackScreen = () => (
             onPress={() => navigation.toggleDrawer()}
           />
         );
-      },
+      }
     })}
   >
     <SearchStack.Screen
