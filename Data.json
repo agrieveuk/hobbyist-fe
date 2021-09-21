@@ -1,0 +1,34 @@
+{
+  "_id": { "$oid": "6148ccf97751719d31eb10cd" },
+  "clubName": "Farrell and Sons",
+  "email": "Oleta28@gmail.com",
+  "phoneNumber": { "$numberDouble": "7117792179.0" },
+  "ageGroup": "young adult",
+  "level": "all levels",
+  "price": { "$numberInt": "28" },
+  "address": { "firstLine": "2 Booth St E", "postcode": "M13 9SS" },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      { "$numberDouble": "53.46952915" },
+      { "$numberDouble": "-2.2354674415226925" }
+    ],
+    "formattedAddress": "Manchester Aquatics Centre, 2, Booth Street East, Chorlton-on-Medlock, Manchester, Greater Manchester, North West England, England, M13 9SS, United Kingdom"
+  },
+  "website": "http://enrico.biz",
+  "clubType": "other",
+  "description": "Aut excepturi vitae non. Non assumenda ratione sed. Quia itaque incidunt iste. Saepe praesentium temporibus dignissimos ad error quis. Molestias possimus voluptas.",
+  "hours": {
+    "monday": { "open": null, "close": null },
+    "tuesday": { "open": null, "close": null },
+    "wednesday": { "open": null, "close": null },
+    "thursday": { "open": null, "close": null },
+    "friday": {
+      "open": { "$numberInt": "20" },
+      "close": { "$numberInt": "24" }
+    },
+    "saturday": { "open": null, "close": null },
+    "sunday": { "open": null, "close": null }
+  },
+  "__v": { "$numberInt": "0" }
+}
