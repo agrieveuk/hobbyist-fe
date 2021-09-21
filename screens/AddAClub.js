@@ -15,14 +15,14 @@ export default function AddAClub({ navigation }) {
           useNativeAndroidPickerStyle={false}
           style={{
             inputAndroid: {
-              color: 'black',
-            },
+              color: 'black'
+            }
           }}
           placeholder={{ label: 'All', value: 'all' }}
           items={[
             { label: 'Football', value: 'football' },
             { label: 'Baseball', value: 'baseball' },
-            { label: 'Hockey', value: 'hockey' },
+            { label: 'Hockey', value: 'hockey' }
           ]}
         />
       </View>
@@ -44,14 +44,14 @@ export default function AddAClub({ navigation }) {
           useNativeAndroidPickerStyle={false}
           style={{
             inputAndroid: {
-              color: 'black',
-            },
+              color: 'black'
+            }
           }}
           placeholder={{ label: 'Free', value: 'free' }}
           items={[
             { label: '£', value: '£' },
             { label: '££', value: '££' },
-            { label: '£££', value: '£££' },
+            { label: '£££', value: '£££' }
           ]}
         />
       </View>
@@ -62,14 +62,14 @@ export default function AddAClub({ navigation }) {
           useNativeAndroidPickerStyle={false}
           style={{
             inputAndroid: {
-              color: 'black',
-            },
+              color: 'black'
+            }
           }}
           placeholder={{ label: 'All', value: 'all' }}
           items={[
             { label: 'Begginer', value: 'begginer' },
             { label: 'Intermediate', value: 'intermediate' },
-            { label: 'Expert', value: 'expert' },
+            { label: 'Expert', value: 'expert' }
           ]}
         />
       </View>
@@ -80,14 +80,14 @@ export default function AddAClub({ navigation }) {
           useNativeAndroidPickerStyle={false}
           style={{
             inputAndroid: {
-              color: 'black',
-            },
+              color: 'black'
+            }
           }}
           placeholder={{ label: 'All', value: 'all' }}
           items={[
             { label: 'Begginer', value: 'begginer' },
             { label: 'Intermediate', value: 'intermediate' },
-            { label: 'Expert', value: 'expert' },
+            { label: 'Expert', value: 'expert' }
           ]}
         />
       </View>
@@ -108,11 +108,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   enterDetailsTitle: {
     fontSize: 20,
-    marginBottom: 15,
+    marginBottom: 15
   },
   input: {
     flexDirection: 'row',
@@ -124,14 +124,14 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     height: 40,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   inputText: {
-    flex: 1,
+    flex: 1
   },
   button: {
     fontSize: 100,
-    margin: 20,
+    margin: 20
   },
   description: {
     height: 80,
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#777',
     textAlignVertical: 'top',
-    padding: 5,
+    padding: 5
   },
   view1: {
     borderWidth: 1,
@@ -151,6 +151,6 @@ const styles = StyleSheet.create({
     margin: 10,
     width: 200,
     borderRadius: 20,
-    height: 40,
-  },
+    height: 40
+  }
 });

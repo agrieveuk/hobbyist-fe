@@ -9,7 +9,7 @@ const ProfileStackScreen = () => (
   <ProfileStack.Navigator
     screenOptions={({ navigation }) => ({
       headerStyle: {
-        backgroundColor: '#5C6BC0',
+        backgroundColor: '#5C6BC0'
       },
       headerTintColor: '#fff',
       headerRight: function headerRight() {
@@ -21,7 +21,7 @@ const ProfileStackScreen = () => (
             onPress={() => navigation.toggleDrawer()}
           />
         );
-      },
+      }
     })}
   >
     <ProfileStack.Screen

@@ -6,7 +6,7 @@ import {
   Button,
   Image,
   ScrollView,
-  TouchableOpacity,
+  TouchableOpacity
 } from 'react-native';
 import { AuthContext } from '../context';
 import { Entypo } from '@expo/vector-icons';
@@ -17,14 +17,14 @@ export default function Profile({ navigation }) {
     { clubName: 'clubName1' },
     { clubName: 'clubName2' },
     { clubName: 'clubName3' },
-    { clubName: 'clubName4' },
+    { clubName: 'clubName4' }
   ]);
   return (
     <View style={styles.container}>
       <Image
         style={styles.image}
         source={{
-          uri: 'https://images.unsplash.com/flagged/photo-1576448438685-9f5e5b283d4f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+          uri: 'https://images.unsplash.com/flagged/photo-1576448438685-9f5e5b283d4f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
         }}
       />
       <Button color="#3737" title="Edit Profile" />
@@ -77,21 +77,21 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   aboutBox: {
-    margin: 20,
+    margin: 20
   },
   image: {
     width: 150,
     height: 150,
     borderRadius: 150 / 2,
     marginTop: 20,
-    borderWidth: 1,
+    borderWidth: 1
   },
   listOfClubs: {
     height: 200,
-    marginBottom: 20,
+    marginBottom: 20
   },
   addClubCard: {
     flexDirection: 'row',
@@ -100,10 +100,10 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     paddingVertical: 5,
     paddingHorizontal: 10,
-    marginBottom: 20,
+    marginBottom: 20
   },
   clubCardText: {
     color: 'white',
-    marginRight: 3,
-  },
+    marginRight: 3
+  }
 });

@@ -5,7 +5,7 @@ import {
   Text,
   Button,
   TextInput,
-  TouchableOpacity,
+  TouchableOpacity
 } from 'react-native';
 import { AuthContext } from '../context';
 import { Ionicons } from '@expo/vector-icons';
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   input: {
     flexDirection: 'row',
@@ -107,25 +107,25 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     height: 40,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   inputText: {
-    flex: 1,
+    flex: 1
   },
   button: {
     fontSize: 100,
-    margin: 10,
+    margin: 10
   },
   LoginTabs: {
     flexDirection: 'row',
-    margin: 10,
+    margin: 10
   },
   BusinessTab: {
     margin: 10,
     backgroundColor: 'rgb(4,122,156)',
     padding: 10,
     borderRadius: 3,
-    color: 'white',
+    color: 'white'
   },
 
   PersonalTab: {
@@ -133,13 +133,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgb(0,166,159)',
     padding: 10,
     borderRadius: 3,
-    color: 'white',
+    color: 'white'
   },
   MuteTab: {
     margin: 10,
     backgroundColor: 'grey',
     padding: 10,
     borderRadius: 3,
-    color: 'white',
-  },
+    color: 'white'
+  }
 });

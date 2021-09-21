@@ -48,38 +48,38 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   selectAccount: {
-    fontSize: 20,
+    fontSize: 20
   },
   accountBoxBusiness: {
     alignItems: 'center',
     backgroundColor: 'rgb(4,122,156)',
     margin: 20,
     width: 300,
-    borderRadius: 10,
+    borderRadius: 10
   },
   accountBoxPersonal: {
     alignItems: 'center',
     backgroundColor: 'rgb(0,166,159)',
     margin: 20,
     width: 300,
-    borderRadius: 10,
+    borderRadius: 10
   },
   accountTitle: {
     fontSize: 30,
     marginBottom: 15,
     color: 'white',
-    marginTop: 15,
+    marginTop: 15
   },
   accountDescription: {
     textAlign: 'center',
     fontSize: 15,
     marginTop: 15,
     color: 'white',
-    marginBottom: 15,
-  },
+    marginBottom: 15
+  }
 });
 
 // <Button

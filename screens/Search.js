@@ -13,14 +13,14 @@ export default function Search({ navigation }) {
           useNativeAndroidPickerStyle={false}
           style={{
             inputAndroid: {
-              color: 'black',
-            },
+              color: 'black'
+            }
           }}
           placeholder={{ label: 'All', value: 'all' }}
           items={[
             { label: 'Football', value: 'football' },
             { label: 'Baseball', value: 'baseball' },
-            { label: 'Hockey', value: 'hockey' },
+            { label: 'Hockey', value: 'hockey' }
           ]}
         />
       </View>
@@ -31,14 +31,14 @@ export default function Search({ navigation }) {
           useNativeAndroidPickerStyle={false}
           style={{
             inputAndroid: {
-              color: 'black',
-            },
+              color: 'black'
+            }
           }}
           placeholder={{ label: '1km', value: '1km' }}
           items={[
             { label: '5km', value: '5km' },
             { label: '10km', value: '10km' },
-            { label: '15km', value: '51km' },
+            { label: '15km', value: '51km' }
           ]}
         />
       </View>
@@ -49,14 +49,14 @@ export default function Search({ navigation }) {
           useNativeAndroidPickerStyle={false}
           style={{
             inputAndroid: {
-              color: 'black',
-            },
+              color: 'black'
+            }
           }}
           placeholder={{ label: 'Free', value: 'free' }}
           items={[
             { label: '£', value: '£' },
             { label: '££', value: '££' },
-            { label: '£££', value: '£££' },
+            { label: '£££', value: '£££' }
           ]}
         />
       </View>
@@ -67,14 +67,14 @@ export default function Search({ navigation }) {
           useNativeAndroidPickerStyle={false}
           style={{
             inputAndroid: {
-              color: 'black',
-            },
+              color: 'black'
+            }
           }}
           placeholder={{ label: 'All', value: 'all' }}
           items={[
             { label: 'Begginer', value: 'begginer' },
             { label: 'Intermediate', value: 'intermediate' },
-            { label: 'Expert', value: 'expert' },
+            { label: 'Expert', value: 'expert' }
           ]}
         />
       </View>
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   view1: {
     borderWidth: 1,
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     margin: 10,
     width: 200,
     borderRadius: 20,
-    height: 40,
+    height: 40
   },
   hobbySelect: {
     borderWidth: 1,
@@ -114,6 +114,6 @@ const styles = StyleSheet.create({
     margin: 10,
     width: 200,
     borderRadius: 20,
-    height: 40,
-  },
+    height: 40
+  }
 });
