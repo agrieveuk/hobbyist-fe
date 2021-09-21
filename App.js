@@ -31,7 +31,7 @@ export default function App() {
       signOut: () => {
         setIsLoading(false);
         setUserToken(null);
-      },
+      }
     };
   }, []);
 
@@ -50,7 +50,7 @@ export default function App() {
             screenOptions={{
               drawerPosition: 'right',
               headerShown: false,
-              drawerType: 'front',
+              drawerType: 'front'
             }}
           >
             <Drawer.Screen
@@ -76,7 +76,7 @@ export default function App() {
               component={createAnAccount}
               options={{
                 title: 'Create An Account',
-                headerTitleAlign: 'center',
+                headerTitleAlign: 'center'
               }}
             />
             <AuthStack.Screen
@@ -84,7 +84,7 @@ export default function App() {
               component={CreateBusinessAccount}
               options={{
                 title: 'Create A Business Account',
-                headerTitleAlign: 'center',
+                headerTitleAlign: 'center'
               }}
             />
             <AuthStack.Screen
@@ -92,7 +92,7 @@ export default function App() {
               component={CreatePersonalAccount}
               options={{
                 title: 'Create A Personal Account',
-                headerTitleAlign: 'center',
+                headerTitleAlign: 'center'
               }}
             />
           </AuthStack.Navigator>

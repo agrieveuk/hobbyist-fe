@@ -89,11 +89,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   enterDetailsTitle: {
     fontSize: 20,
-    marginBottom: 15
+    marginBottom: 15,
   },
   input: {
     flexDirection: 'row',
@@ -105,12 +105,12 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     height: 40,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   inputText: {
-    flex: 1
+    flex: 1,
   },
   button: {
-    fontSize: 100
-  }
+    fontSize: 100,
+  },
 });

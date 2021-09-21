@@ -10,7 +10,7 @@ const HomeStackScreen = () => (
   <HomeStack.Navigator
     screenOptions={({ navigation }) => ({
       headerStyle: {
-        backgroundColor: '#5C6BC0',
+        backgroundColor: '#5C6BC0'
       },
       headerTintColor: '#fff',
       headerRight: function headerRight() {
@@ -22,7 +22,7 @@ const HomeStackScreen = () => (
             onPress={() => navigation.toggleDrawer()}
           />
         );
-      },
+      }
     })}
   >
     <HomeStack.Screen
@@ -30,7 +30,7 @@ const HomeStackScreen = () => (
       component={Homepage}
       options={{
         title: 'Hobbyist',
-        headerTitleAlign: 'center',
+        headerTitleAlign: 'center'
       }}
     />
     <HomeStack.Screen
@@ -38,7 +38,7 @@ const HomeStackScreen = () => (
       component={ClubPage}
       options={({ route }) => ({
         title: route.params.club,
-        headerTitleAlign: 'center',
+        headerTitleAlign: 'center'
       })}
     />
   </HomeStack.Navigator>
