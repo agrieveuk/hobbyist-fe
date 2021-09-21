@@ -1,15 +1,15 @@
-import React, { useState, useEffect, useMemo } from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import createAnAccount from "./screens/CreateAnAccount";
-import CreateBusinessAccount from "./screens/CreateBusinessAccount";
-import CreatePersonalAccount from "./screens/CreatePersonalAccount";
-import SignIn from "./screens/SignIn";
-import { createDrawerNavigator } from "@react-navigation/drawer";
-import Splash from "./screens/Splash";
-import { AuthContext } from "./context";
-import TabsStackScreen from "./stacks/tabsStack";
-import ProfileStackScreen from "./stacks/profileStack";
+import React, { useState, useEffect, useMemo } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import createAnAccount from './screens/CreateAnAccount';
+import CreateBusinessAccount from './screens/CreateBusinessAccount';
+import CreatePersonalAccount from './screens/CreatePersonalAccount';
+import SignIn from './screens/SignIn';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import Splash from './screens/Splash';
+import { AuthContext } from './context';
+import TabsStackScreen from './stacks/tabsStack';
+import ProfileStackScreen from './stacks/profileStack';
 
 const AuthStack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -22,16 +22,16 @@ export default function App() {
     return {
       signIn: () => {
         setIsLoading(false);
-        setUserToken("abc");
+        setUserToken('abc');
       },
       signUp: () => {
         setIsLoading(false);
-        setUserToken("abc");
+        setUserToken('abc');
       },
       signOut: () => {
         setIsLoading(false);
         setUserToken(null);
-      },
+      }
     };
   }, []);
 
@@ -48,20 +48,20 @@ export default function App() {
         {userToken ? (
           <Drawer.Navigator
             screenOptions={{
-              drawerPosition: "right",
+              drawerPosition: 'right',
               headerShown: false,
-              drawerType: "front",
+              drawerType: 'front'
             }}
           >
             <Drawer.Screen
               name="DrawHome"
               component={TabsStackScreen}
-              options={{ title: "Home" }}
+              options={{ title: 'Home' }}
             />
             <Drawer.Screen
               name="DrawProfile"
               component={ProfileStackScreen}
-              options={{ title: "Profile" }}
+              options={{ title: 'Profile' }}
             />
           </Drawer.Navigator>
         ) : (
@@ -69,30 +69,30 @@ export default function App() {
             <AuthStack.Screen
               name="signIn"
               component={SignIn}
-              options={{ title: "Sign In", headerTitleAlign: "center" }}
+              options={{ title: 'Sign In', headerTitleAlign: 'center' }}
             />
             <AuthStack.Screen
               name="signUp"
               component={createAnAccount}
               options={{
-                title: "Create An Account",
-                headerTitleAlign: "center",
+                title: 'Create An Account',
+                headerTitleAlign: 'center'
               }}
             />
             <AuthStack.Screen
               name="CreateBusinessAccount"
               component={CreateBusinessAccount}
               options={{
-                title: "Create A Business Account",
-                headerTitleAlign: "center",
+                title: 'Create A Business Account',
+                headerTitleAlign: 'center'
               }}
             />
             <AuthStack.Screen
               name="CreatePersonalAccount"
               component={CreatePersonalAccount}
               options={{
-                title: "Create A Personal Account",
-                headerTitleAlign: "center",
+                title: 'Create A Personal Account',
+                headerTitleAlign: 'center'
               }}
             />
           </AuthStack.Navigator>

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { StyleSheet, Text, View, ScrollView, Button } from "react-native";
-import { getClubs } from "../api";
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, Text, View, ScrollView, Button } from 'react-native';
+import { getClubs } from '../api';
 
 export default function Homepage({ navigation }) {
   const [clubList, setClubList] = useState([]);
@@ -31,7 +31,7 @@ export default function Homepage({ navigation }) {
                 accessibilityLabel="Learn more about this purple button"
                 title={`Go to ${club.clubName}`}
                 onPress={() =>
-                  navigation.navigate("ClubPage", { club: club.clubName })
+                  navigation.navigate('ClubPage', { club: club.clubName })
                 }
               />
             </View>
@@ -45,15 +45,15 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 20,
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   club: {
     marginTop: 24,
     padding: 30,
-    backgroundColor: "pink",
-    fontSize: 24,
-  },
+    backgroundColor: 'pink',
+    fontSize: 24
+  }
   // li: {
   //   width: 400,
   //   height: 200

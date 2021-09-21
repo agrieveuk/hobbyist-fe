@@ -1,9 +1,9 @@
-import React from "react";
-import Homepage from "../screens/Homepage";
-import ClubPage from "../screens/ClubPage";
-import { FontAwesome } from "@expo/vector-icons";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import BusinessPage from "../screens/BusinessPage";
+import React from 'react';
+import Homepage from '../screens/Homepage';
+import ClubPage from '../screens/ClubPage';
+import { FontAwesome } from '@expo/vector-icons';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import BusinessPage from '../screens/BusinessPage';
 
 const HomeStack = createNativeStackNavigator();
 
@@ -11,9 +11,9 @@ const HomeStackScreen = () => (
   <HomeStack.Navigator
     screenOptions={({ navigation }) => ({
       headerStyle: {
-        backgroundColor: "#5C6BC0",
+        backgroundColor: '#5C6BC0'
       },
-      headerTintColor: "#fff",
+      headerTintColor: '#fff',
       headerRight: function headerRight() {
         return (
           <FontAwesome
@@ -23,15 +23,15 @@ const HomeStackScreen = () => (
             onPress={() => navigation.toggleDrawer()}
           />
         );
-      },
+      }
     })}
   >
     <HomeStack.Screen
       name="Home"
       component={Homepage}
       options={{
-        title: "Hobbyist",
-        headerTitleAlign: "center",
+        title: 'Hobbyist',
+        headerTitleAlign: 'center'
       }}
     />
     <HomeStack.Screen
@@ -39,15 +39,15 @@ const HomeStackScreen = () => (
       component={ClubPage}
       options={({ route }) => ({
         title: route.params.club,
-        headerTitleAlign: "center",
+        headerTitleAlign: 'center'
       })}
     />
     <HomeStack.Screen
       name="BusinessPage"
       component={BusinessPage}
       options={({ route }) => ({
-        title: "BusinessName",
-        headerTitleAlign: "center",
+        title: 'BusinessName',
+        headerTitleAlign: 'center'
       })}
     />
   </HomeStack.Navigator>
