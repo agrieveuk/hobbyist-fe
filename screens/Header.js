@@ -16,7 +16,7 @@ export default function Header() {
       />
       {findSearchOpen && (
         <Button
-          color="blue"
+          color="#8949d9"
           style={styles.button}
           accessibilityLabel="Learn more about this purple button"
           title="submit"
@@ -42,20 +42,3 @@ const styles = StyleSheet.create({
     letterSpacing: 1
   }
 });
-
-// <Button
-// color="#841584"
-// style={styles.button}
-// accessibilityLabel="Learn more about this purple button"
-// title="Find Search"
-// onPress={() => setFindSearchOpen(true)}
-// />
-// {findSearchOpen && (
-// <Button
-//   color="blue"
-//   style={styles.button}
-//   accessibilityLabel="Learn more about this purple button"
-//   title="submit"
-//   onPress={() => setFindSearchOpen(false)}
-// />
-// )}

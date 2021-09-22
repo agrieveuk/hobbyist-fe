@@ -8,17 +8,12 @@ export default function createAnAccount({ navigation }) {
     <View style={styles.container}>
       <Text style={styles.selectAccount}>Select Account Type:</Text>
       <TouchableOpacity
-        onPress={() => navigation.navigate('CreateBusinessAccount')}
+        onPress={() => navigation.navigate('CreatePersonalAccount')}
       >
         <View style={styles.accountBoxPersonal}>
           <Text style={styles.accountTitle}>Personal Account</Text>
 
-          <FontAwesome5
-            name="search-location"
-            size={100}
-            color="white"
-            onPress={() => navigation.navigate('CreatePersonalAccount')}
-          />
+          <FontAwesome5 name="search-location" size={100} color="white" />
 
           <Text style={styles.accountDescription}>
             With a personal account, you can search for any club/hobby in your

@@ -27,9 +27,11 @@ export default function BusinessPage({ navigation }) {
           uri: 'https://images.unsplash.com/flagged/photo-1576448438685-9f5e5b283d4f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
         }}
       />
-      <View style={styles.aboutBox}>
-        <Text>About:</Text>
-        <Text>
+      <View style={{ margin: 20 }}>
+        <Text style={{ fontSize: 20, color: '#431275', marginBottom: 10 }}>
+          About:
+        </Text>
+        <Text style={{ color: '#431275', marginBottom: 20 }}>
           A review is an evaluation of a publication, service, or company such
           as a movie (a movie review), video game (video game review), musical
           composition (music review of a composition or recording), book (book
@@ -37,7 +39,7 @@ export default function BusinessPage({ navigation }) {
         </Text>
       </View>
       <View style={styles.listOfClubs}>
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           {clubList.map((club) => {
             return (
               <View style={styles.li} key={club.clubName}>
@@ -63,10 +65,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
-  },
-  aboutBox: {
-    margin: 20
+    alignItems: 'center',
+    backgroundColor: '#e1dce6'
   },
   image: {
     width: 150,
@@ -77,15 +77,7 @@ const styles = StyleSheet.create({
   },
   listOfClubs: {
     height: 200,
-    marginBottom: 20
-  },
-  addClubCard: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#5C6BC0',
-    borderRadius: 4,
-    paddingVertical: 5,
-    paddingHorizontal: 10,
+    width: 200,
     marginBottom: 20
   },
   clubCardText: {

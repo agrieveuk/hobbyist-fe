@@ -9,7 +9,7 @@ const ProfileStackScreen = () => (
   <ProfileStack.Navigator
     screenOptions={({ navigation }) => ({
       headerStyle: {
-        backgroundColor: '#5C6BC0'
+        backgroundColor: '#8949d9'
       },
       headerTintColor: '#fff',
       headerRight: function headerRight() {
