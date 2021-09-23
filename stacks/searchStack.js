@@ -11,7 +11,7 @@ const SearchStackScreen = () => (
   <SearchStack.Navigator
     screenOptions={({ navigation }) => ({
       headerStyle: {
-        backgroundColor: '#8949d9',
+        backgroundColor: '#8949d9'
       },
       headerTintColor: '#fff',
       headerRight: function headerRight() {
@@ -23,7 +23,7 @@ const SearchStackScreen = () => (
             onPress={() => navigation.toggleDrawer()}
           />
         );
-      },
+      }
     })}
   >
     <SearchStack.Screen
@@ -41,7 +41,7 @@ const SearchStackScreen = () => (
       component={MapClubPage}
       options={({ route }) => ({
         title: route.params.currentClub.clubName,
-        headerTitleAlign: 'center',
+        headerTitleAlign: 'center'
       })}
     />
   </SearchStack.Navigator>

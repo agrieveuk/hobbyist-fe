@@ -8,7 +8,7 @@ const getClubs = async (
   ageGroup,
   day
 ) => {
-  let request = `https://nc-hobbyist.herokuapp.com/api/clubs?`;
+  let request = 'https://nc-hobbyist.herokuapp.com/api/clubs?';
 
   if (hobby) request += `&clubType=${hobby}`;
 
@@ -23,7 +23,7 @@ const getClubs = async (
   console.log(request);
 
   const {
-    data: { clubs },
+    data: { clubs }
   } = await axios.get(request);
 
   return clubs;

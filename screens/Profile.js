@@ -7,7 +7,7 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
-  ImageBackground,
+  ImageBackground
 } from 'react-native';
 import { AuthContext } from '../context';
 import { Entypo } from '@expo/vector-icons';
@@ -23,7 +23,7 @@ export default function Profile({ navigation }) {
     { clubName: 'clubName1' },
     { clubName: 'clubName2' },
     { clubName: 'clubName3' },
-    { clubName: 'clubName4' },
+    { clubName: 'clubName4' }
   ]);
 
   useEffect(() => {
@@ -92,7 +92,7 @@ export default function Profile({ navigation }) {
                   <Text
                     style={{
                       color: '#431275',
-                      fontSize: 20,
+                      fontSize: 20
                     }}
                   >
                     {club.clubName}
@@ -108,7 +108,7 @@ export default function Profile({ navigation }) {
                     style={styles.image}
                     imageStyle={{
                       borderBottomLeftRadius: 20,
-                      borderBottomRightRadius: 20,
+                      borderBottomRightRadius: 20
                     }}
                   ></ImageBackground>
                 </View>
@@ -136,14 +136,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#e1dce6',
+    backgroundColor: '#e1dce6'
   },
   avatar: {
     width: 150,
     height: 150,
     borderRadius: 150 / 2,
     marginTop: 20,
-    borderWidth: 1,
+    borderWidth: 1
   },
 
   addClubCard: {
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     margin: 10,
     borderRadius: 4,
     paddingVertical: 5,
-    paddingHorizontal: 10,
+    paddingHorizontal: 10
   },
   button: {
     flexDirection: 'row',
@@ -164,11 +164,11 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     paddingVertical: 5,
     paddingHorizontal: 10,
-    marginBottom: 50,
+    marginBottom: 50
   },
   clubCardText: {
     color: 'white',
-    marginRight: 3,
+    marginRight: 3
   },
   card: {
     justifyContent: 'center',
@@ -180,14 +180,14 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 1, height: 3 },
     shadowOpacity: 0.4,
     shadowRadius: 3,
-    borderRadius: 20,
+    borderRadius: 20
   },
   imageContainer: {
     height: 100,
-    width: '100%',
+    width: '100%'
   },
   image: {
     flex: 1,
-    justifyContent: 'center',
-  },
+    justifyContent: 'center'
+  }
 });

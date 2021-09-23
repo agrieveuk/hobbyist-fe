@@ -6,7 +6,7 @@ import {
   ScrollView,
   Button,
   TouchableOpacity,
-  ImageBackground,
+  ImageBackground
 } from 'react-native';
 import { getClubs } from '../api';
 import { art, other, sport, music } from '../images';
@@ -74,7 +74,7 @@ export default function Homepage({ navigation, InitialState }) {
                     <Text
                       style={{
                         color: '#431275',
-                        fontSize: 20,
+                        fontSize: 20
                       }}
                     >
                       {club.clubName}
@@ -90,7 +90,7 @@ export default function Homepage({ navigation, InitialState }) {
                       style={styles.image}
                       imageStyle={{
                         borderBottomLeftRadius: 20,
-                        borderBottomRightRadius: 20,
+                        borderBottomRightRadius: 20
                       }}
                     ></ImageBackground>
                   </View>
@@ -109,11 +109,11 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#e1dce6',
+    backgroundColor: '#e1dce6'
   },
   interest: { color: 'purple', fontSize: 15 },
   scroller: {
-    marginBottom: 20,
+    marginBottom: 20
   },
   club: {
     // marginTop: 20,
@@ -134,14 +134,14 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 1, height: 3 },
     shadowOpacity: 0.4,
     shadowRadius: 3,
-    borderRadius: 20,
+    borderRadius: 20
   },
   imageContainer: {
     height: 100,
-    width: '100%',
+    width: '100%'
   },
   image: {
     flex: 1,
-    justifyContent: 'center',
-  },
+    justifyContent: 'center'
+  }
 });

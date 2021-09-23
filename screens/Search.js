@@ -5,7 +5,7 @@ import {
   Text,
   Button,
   TextInput,
-  TouchableOpacity,
+  TouchableOpacity
 } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import { Formik } from 'formik';
@@ -29,7 +29,7 @@ export default function Search({ navigation }) {
           price: '',
           skillLevel: '',
           ageGroup: '',
-          day: '',
+          day: ''
         }}
         onSubmit={(values) => {
           const { hobby, maxDistance, price, skillLevel, ageGroup, day } =
@@ -60,15 +60,15 @@ export default function Search({ navigation }) {
                 useNativeAndroidPickerStyle={false}
                 style={{
                   inputAndroid: {
-                    color: 'black',
-                  },
+                    color: 'black'
+                  }
                 }}
                 placeholder={{ label: 'Any', value: '' }}
                 items={[
                   { label: 'Art', value: 'art' },
                   { label: 'Music', value: 'music' },
                   { label: 'Sport', value: 'sport' },
-                  { label: 'Other', value: 'other' },
+                  { label: 'Other', value: 'other' }
                 ]}
               />
             </View>
@@ -79,8 +79,8 @@ export default function Search({ navigation }) {
                 useNativeAndroidPickerStyle={false}
                 style={{
                   inputAndroid: {
-                    color: 'black',
-                  },
+                    color: 'black'
+                  }
                 }}
                 placeholder={{ label: 'Any', value: '' }}
                 items={[
@@ -90,7 +90,7 @@ export default function Search({ navigation }) {
                   { label: 'Thursday', value: 'thursday' },
                   { label: 'Friday', value: 'friday' },
                   { label: 'Saturday', value: 'saturday' },
-                  { label: 'Sunday', value: 'sunday' },
+                  { label: 'Sunday', value: 'sunday' }
                 ]}
               />
             </View>
@@ -101,15 +101,15 @@ export default function Search({ navigation }) {
                 useNativeAndroidPickerStyle={false}
                 style={{
                   inputAndroid: {
-                    color: 'black',
-                  },
+                    color: 'black'
+                  }
                 }}
                 placeholder={{ label: 'Any', value: '' }}
                 items={[
                   { label: '1km', value: '1km' },
                   { label: '5km', value: '5km' },
                   { label: '10km', value: '10km' },
-                  { label: '15km', value: '51km' },
+                  { label: '15km', value: '51km' }
                 ]}
               />
             </View>
@@ -120,8 +120,8 @@ export default function Search({ navigation }) {
                 useNativeAndroidPickerStyle={false}
                 style={{
                   inputAndroid: {
-                    color: 'black',
-                  },
+                    color: 'black'
+                  }
                 }}
                 placeholder={{ label: 'Any', value: '' }}
                 items={[
@@ -131,7 +131,7 @@ export default function Search({ navigation }) {
                   { label: '£20', value: '20' },
                   { label: '£25', value: '25' },
                   { label: '£30', value: '30' },
-                  { label: '£35', value: '35' },
+                  { label: '£35', value: '35' }
                 ]}
               />
             </View>
@@ -142,14 +142,14 @@ export default function Search({ navigation }) {
                 useNativeAndroidPickerStyle={false}
                 style={{
                   inputAndroid: {
-                    color: 'black',
-                  },
+                    color: 'black'
+                  }
                 }}
                 placeholder={{ label: 'Any', value: '' }}
                 items={[
                   { label: 'Beginner', value: 'beginner' },
                   { label: 'Intermediate', value: 'intermediate' },
-                  { label: 'Advanced', value: 'advanced' },
+                  { label: 'Advanced', value: 'advanced' }
                 ]}
               />
             </View>
@@ -160,8 +160,8 @@ export default function Search({ navigation }) {
                 useNativeAndroidPickerStyle={false}
                 style={{
                   inputAndroid: {
-                    color: 'black',
-                  },
+                    color: 'black'
+                  }
                 }}
                 placeholder={{ label: 'Any', value: '' }}
                 items={[
@@ -169,7 +169,7 @@ export default function Search({ navigation }) {
                   { label: 'Pre-school', value: 'pre school' },
                   { label: 'Secondary', value: 'secondary' },
                   { label: 'Young adult', value: 'young adult' },
-                  { label: 'Adult', value: 'adult' },
+                  { label: 'Adult', value: 'adult' }
                 ]}
                 // 'toddler',
                 //     'pre-school',
@@ -206,7 +206,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#e1dce6',
+    backgroundColor: '#e1dce6'
   },
   view1: {
     borderWidth: 1,
@@ -218,7 +218,7 @@ const styles = StyleSheet.create({
     margin: 10,
     width: 200,
     borderRadius: 20,
-    height: 40,
+    height: 40
   },
   hobbySelect: {
     borderWidth: 1,
@@ -228,7 +228,7 @@ const styles = StyleSheet.create({
     margin: 10,
     width: 200,
     borderRadius: 20,
-    height: 40,
+    height: 40
   },
   button: {
     flexDirection: 'row',
@@ -241,6 +241,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     marginBottom: 20,
     width: 200,
-    position: 'relative',
-  },
+    position: 'relative'
+  }
 });

@@ -5,7 +5,7 @@ import {
   View,
   Image,
   Button,
-  TouchableOpacity,
+  TouchableOpacity
 } from 'react-native';
 
 import { art, other, sport, music } from '../images';
@@ -44,7 +44,7 @@ export default function ClubPage({ navigation, route }) {
           color: '#431275',
           fontSize: 20,
           textAlign: 'center',
-          marginTop: 20,
+          marginTop: 20
         }}
       >
         Category: {route.params.currentClub.clubType}
@@ -54,7 +54,7 @@ export default function ClubPage({ navigation, route }) {
           color: '#431275',
           fontSize: 20,
           textAlign: 'center',
-          marginTop: 20,
+          marginTop: 20
         }}
       >
         About
@@ -64,7 +64,7 @@ export default function ClubPage({ navigation, route }) {
           color: '#431275',
           fontSize: 16,
           marginBottom: 20,
-          textAlign: 'center',
+          textAlign: 'center'
         }}
       >
         {route.params.currentClub.description}
@@ -74,7 +74,7 @@ export default function ClubPage({ navigation, route }) {
           color: '#431275',
           fontSize: 20,
           textAlign: 'center',
-          textTransform: 'capitalize',
+          textTransform: 'capitalize'
         }}
       >
         {openDay}
@@ -83,7 +83,7 @@ export default function ClubPage({ navigation, route }) {
         style={{
           color: '#431275',
           fontSize: 20,
-          textAlign: 'center',
+          textAlign: 'center'
         }}
       >{`Opening Time ${route.params.currentClub.hours[openDay].open}:00`}</Text>
       <Text
@@ -91,7 +91,7 @@ export default function ClubPage({ navigation, route }) {
           color: '#431275',
           fontSize: 20,
           textAlign: 'center',
-          marginBottom: 20,
+          marginBottom: 20
         }}
       >{`Closing Time ${route.params.currentClub.hours[openDay].close}:00`}</Text>
       <Text
@@ -99,7 +99,7 @@ export default function ClubPage({ navigation, route }) {
           color: '#431275',
           fontSize: 20,
           textAlign: 'center',
-          marginTop: 20,
+          marginTop: 20
         }}
       >
         Contact Info
@@ -124,11 +124,11 @@ const styles = StyleSheet.create({
     marginTop: 20,
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'flex-start',
+    justifyContent: 'flex-start'
   },
   image: {
     width: '100%',
-    height: '30%',
+    height: '30%'
   },
   button: {
     flexDirection: 'row',
@@ -139,8 +139,8 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     paddingVertical: 5,
     paddingHorizontal: 10,
-    margin: 20,
-  },
+    margin: 20
+  }
 });
 
 // <Text

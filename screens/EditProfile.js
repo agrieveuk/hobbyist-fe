@@ -5,7 +5,7 @@ import {
   Text,
   Button,
   TextInput,
-  TouchableOpacity,
+  TouchableOpacity
 } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import { Formik } from 'formik';
@@ -19,7 +19,7 @@ export default function EditProfile({ navigation }) {
         initialValues={{
           email: '',
           password: '',
-          phoneNumber: '',
+          phoneNumber: ''
         }}
         onSubmit={(values) => console.log(values)}
       >
@@ -94,11 +94,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-start',
     alignItems: 'center',
-    backgroundColor: '#e1dce6',
+    backgroundColor: '#e1dce6'
   },
   enterDetailsTitle: {
     fontSize: 20,
-    marginBottom: 15,
+    marginBottom: 15
   },
   input: {
     flexDirection: 'row',
@@ -111,10 +111,10 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     height: 40,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   inputText: {
-    flex: 1,
+    flex: 1
   },
   description: {
     flexDirection: 'row',
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     padding: 8,
     margin: 10,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   view1: {
     borderWidth: 1,
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
     margin: 10,
     width: 200,
     borderRadius: 20,
-    height: 40,
+    height: 40
   },
   button: {
     flexDirection: 'row',
@@ -153,6 +153,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     marginBottom: 20,
     width: 200,
-    position: 'relative',
-  },
+    position: 'relative'
+  }
 });
