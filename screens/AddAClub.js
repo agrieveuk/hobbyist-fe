@@ -5,7 +5,7 @@ import {
   Text,
   Button,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import { Formik } from 'formik';
@@ -22,7 +22,7 @@ export default function AddAClub({ navigation }) {
           clubDescription: '',
           clubPrice: '',
           clubSkillLevel: '',
-          clubAgeGroup: ''
+          clubAgeGroup: '',
         }}
         onSubmit={(values) => console.log(values)}
       >
@@ -36,14 +36,14 @@ export default function AddAClub({ navigation }) {
                 useNativeAndroidPickerStyle={false}
                 style={{
                   inputAndroid: {
-                    color: 'black'
-                  }
+                    color: 'black',
+                  },
                 }}
                 placeholder={{ label: 'All', value: 'all' }}
                 items={[
                   { label: 'Football', value: 'football' },
                   { label: 'Baseball', value: 'baseball' },
-                  { label: 'Hockey', value: 'hockey' }
+                  { label: 'Hockey', value: 'hockey' },
                 ]}
               />
             </View>
@@ -76,14 +76,14 @@ export default function AddAClub({ navigation }) {
                 useNativeAndroidPickerStyle={false}
                 style={{
                   inputAndroid: {
-                    color: 'black'
-                  }
+                    color: 'black',
+                  },
                 }}
                 placeholder={{ label: 'Free', value: 'free' }}
                 items={[
                   { label: '£', value: '£' },
                   { label: '££', value: '££' },
-                  { label: '£££', value: '£££' }
+                  { label: '£££', value: '£££' },
                 ]}
               />
             </View>
@@ -94,14 +94,14 @@ export default function AddAClub({ navigation }) {
                 useNativeAndroidPickerStyle={false}
                 style={{
                   inputAndroid: {
-                    color: 'black'
-                  }
+                    color: 'black',
+                  },
                 }}
                 placeholder={{ label: 'All', value: 'all' }}
                 items={[
                   { label: 'Beginner', value: 'Beginner' },
                   { label: 'Intermediate', value: 'intermediate' },
-                  { label: 'Expert', value: 'expert' }
+                  { label: 'Expert', value: 'expert' },
                 ]}
               />
             </View>
@@ -112,14 +112,14 @@ export default function AddAClub({ navigation }) {
                 useNativeAndroidPickerStyle={false}
                 style={{
                   inputAndroid: {
-                    color: 'black'
-                  }
+                    color: 'black',
+                  },
                 }}
                 placeholder={{ label: 'All', value: 'all' }}
                 items={[
                   { label: 'Under 12s', value: 'under_12s' },
                   { label: 'Teens', value: 'teens' },
-                  { label: 'Adults', value: 'adults' }
+                  { label: 'Adults', value: 'adults' },
                 ]}
               />
             </View>
@@ -148,11 +148,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-start',
     alignItems: 'center',
-    backgroundColor: '#e1dce6'
+    backgroundColor: '#e1dce6',
   },
   enterDetailsTitle: {
     fontSize: 20,
-    marginBottom: 15
+    marginBottom: 15,
   },
   input: {
     flexDirection: 'row',
@@ -165,10 +165,10 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     height: 40,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   inputText: {
-    flex: 1
+    flex: 1,
   },
   description: {
     flexDirection: 'row',
@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
     padding: 8,
     margin: 10,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   view1: {
     borderWidth: 1,
@@ -194,7 +194,7 @@ const styles = StyleSheet.create({
     margin: 10,
     width: 200,
     borderRadius: 20,
-    height: 40
+    height: 40,
   },
   button: {
     flexDirection: 'row',
@@ -207,6 +207,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     marginBottom: 20,
     width: 200,
-    position: 'relative'
-  }
+    position: 'relative',
+  },
 });

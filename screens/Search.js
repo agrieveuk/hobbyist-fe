@@ -1,17 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   View,
   StyleSheet,
   Text,
   Button,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import { Formik } from 'formik';
+import { getClubs } from '../api';
 
 export default function Search({ navigation }) {
-  const [hobbySelect, setHobbySelect] = useState('');
+  const [mapSearchData, setMapSearchData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    if (!loading) {
+      setLoading(true);
+      navigation.navigate('MapViewPage', { mapSearchData });
+    }
+  }, [loading]);
   return (
     <View style={styles.container}>
       <Formik
@@ -19,27 +27,70 @@ export default function Search({ navigation }) {
           hobby: '',
           maxDistance: '',
           price: '',
-          skillLevel: ''
+          skillLevel: '',
+          ageGroup: '',
+          day: '',
         }}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={(values) => {
+          const { hobby, maxDistance, price, skillLevel, ageGroup, day } =
+            values;
+          console.log(values);
+
+          const requestFunc = async () => {
+            const request = await getClubs(
+              hobby,
+              maxDistance,
+              price,
+              skillLevel,
+              ageGroup,
+              day
+            );
+            setMapSearchData(request);
+            setLoading(false);
+          };
+          requestFunc();
+        }}
       >
         {({ handleChange, handleBlur, handleSubmit, values }) => (
           <View>
-            <Text>Choose a Hobby:</Text>
+            <Text>Choose a Hobby Type:</Text>
             <View style={styles.view1}>
               <RNPickerSelect
                 onValueChange={handleChange('hobby')}
                 useNativeAndroidPickerStyle={false}
                 style={{
                   inputAndroid: {
-                    color: 'black'
-                  }
+                    color: 'black',
+                  },
                 }}
-                placeholder={{ label: 'All', value: 'all' }}
+                placeholder={{ label: 'Any', value: '' }}
                 items={[
-                  { label: 'Football', value: 'football' },
-                  { label: 'Baseball', value: 'baseball' },
-                  { label: 'Hockey', value: 'hockey' }
+                  { label: 'Art', value: 'art' },
+                  { label: 'Music', value: 'music' },
+                  { label: 'Sport', value: 'sport' },
+                  { label: 'Other', value: 'other' },
+                ]}
+              />
+            </View>
+            <Text>Choose a Day to Hobby it up!</Text>
+            <View style={styles.view1}>
+              <RNPickerSelect
+                onValueChange={handleChange('day')}
+                useNativeAndroidPickerStyle={false}
+                style={{
+                  inputAndroid: {
+                    color: 'black',
+                  },
+                }}
+                placeholder={{ label: 'Any', value: '' }}
+                items={[
+                  { label: 'Monday', value: 'monday' },
+                  { label: 'Tuesday', value: 'tuesday' },
+                  { label: 'Wednesday', value: 'wednesday' },
+                  { label: 'Thursday', value: 'thursday' },
+                  { label: 'Friday', value: 'friday' },
+                  { label: 'Saturday', value: 'saturday' },
+                  { label: 'Sunday', value: 'sunday' },
                 ]}
               />
             </View>
@@ -50,32 +101,37 @@ export default function Search({ navigation }) {
                 useNativeAndroidPickerStyle={false}
                 style={{
                   inputAndroid: {
-                    color: 'black'
-                  }
+                    color: 'black',
+                  },
                 }}
-                placeholder={{ label: '1km', value: '1km' }}
+                placeholder={{ label: 'Any', value: '' }}
                 items={[
+                  { label: '1km', value: '1km' },
                   { label: '5km', value: '5km' },
                   { label: '10km', value: '10km' },
-                  { label: '15km', value: '51km' }
+                  { label: '15km', value: '51km' },
                 ]}
               />
             </View>
-            <Text>Price:</Text>
+            <Text>Max Price:</Text>
             <View style={styles.view1}>
               <RNPickerSelect
                 onValueChange={handleChange('price')}
                 useNativeAndroidPickerStyle={false}
                 style={{
                   inputAndroid: {
-                    color: 'black'
-                  }
+                    color: 'black',
+                  },
                 }}
-                placeholder={{ label: 'Free', value: 'free' }}
+                placeholder={{ label: 'Any', value: '' }}
                 items={[
-                  { label: '£', value: '£' },
-                  { label: '££', value: '££' },
-                  { label: '£££', value: '£££' }
+                  { label: '£5', value: '5' },
+                  { label: '£10', value: '10' },
+                  { label: '£15', value: '15' },
+                  { label: '£20', value: '20' },
+                  { label: '£25', value: '25' },
+                  { label: '£30', value: '30' },
+                  { label: '£35', value: '35' },
                 ]}
               />
             </View>
@@ -86,15 +142,41 @@ export default function Search({ navigation }) {
                 useNativeAndroidPickerStyle={false}
                 style={{
                   inputAndroid: {
-                    color: 'black'
-                  }
+                    color: 'black',
+                  },
                 }}
-                placeholder={{ label: 'All', value: 'all' }}
+                placeholder={{ label: 'Any', value: '' }}
                 items={[
-                  { label: 'Beginner', value: 'Beginner' },
+                  { label: 'Beginner', value: 'beginner' },
                   { label: 'Intermediate', value: 'intermediate' },
-                  { label: 'Expert', value: 'expert' }
+                  { label: 'Advanced', value: 'advanced' },
                 ]}
+              />
+            </View>
+            <Text>Choose an Age Group:</Text>
+            <View style={styles.view1}>
+              <RNPickerSelect
+                onValueChange={handleChange('ageGroup')}
+                useNativeAndroidPickerStyle={false}
+                style={{
+                  inputAndroid: {
+                    color: 'black',
+                  },
+                }}
+                placeholder={{ label: 'Any', value: '' }}
+                items={[
+                  { label: 'Toddler', value: 'toddler' },
+                  { label: 'Pre-school', value: 'pre school' },
+                  { label: 'Secondary', value: 'secondary' },
+                  { label: 'Young adult', value: 'young adult' },
+                  { label: 'Adult', value: 'adult' },
+                ]}
+                // 'toddler',
+                //     'pre-school',
+                //     'primary-school',
+                //     'secondary',
+                //     'young adult',
+                //     'adult'
               />
             </View>
             <TouchableOpacity
@@ -124,7 +206,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#e1dce6'
+    backgroundColor: '#e1dce6',
   },
   view1: {
     borderWidth: 1,
@@ -136,7 +218,7 @@ const styles = StyleSheet.create({
     margin: 10,
     width: 200,
     borderRadius: 20,
-    height: 40
+    height: 40,
   },
   hobbySelect: {
     borderWidth: 1,
@@ -146,7 +228,7 @@ const styles = StyleSheet.create({
     margin: 10,
     width: 200,
     borderRadius: 20,
-    height: 40
+    height: 40,
   },
   button: {
     flexDirection: 'row',
@@ -159,6 +241,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     marginBottom: 20,
     width: 200,
-    position: 'relative'
-  }
+    position: 'relative',
+  },
 });

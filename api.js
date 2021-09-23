@@ -1,15 +1,38 @@
-const getClubs = () => {
-  console.log('GET api/clubs goes here');
-  return [
-    { clubName: 'clubName1' },
-    { clubName: 'clubName2' },
-    { clubName: 'clubName3' },
-    { clubName: 'clubName4' },
-    { clubName: 'clubName5' },
-    { clubName: 'clubName6' },
-    { clubName: 'clubName7' },
-    { clubName: 'clubName8' },
-    { clubName: 'clubName9' }
-  ];
+import axios from 'axios';
+
+const getClubs = async (
+  hobby,
+  maxDistance,
+  price,
+  skillLevel,
+  ageGroup,
+  day
+) => {
+  let request = `https://nc-hobbyist.herokuapp.com/api/clubs?`;
+
+  if (hobby) request += `&clubType=${hobby}`;
+
+  if (price) request += `&price=${price}`;
+
+  if (skillLevel) request += `&level=${skillLevel}`;
+
+  if (ageGroup) request += `&ageGroup=${ageGroup}`;
+
+  if (day) request += `&day=${day}`;
+
+  console.log(request);
+
+  const {
+    data: { clubs },
+  } = await axios.get(request);
+
+  return clubs;
 };
-export { getClubs };
+
+const getBusinessUser = async (user) => {
+  let request = `https://nc-hobbyist.herokuapp.com/api/businessUsers/${user}`;
+
+  const { data: businessUser } = await axios.get(request);
+  return businessUser;
+};
+export { getClubs, getBusinessUser };

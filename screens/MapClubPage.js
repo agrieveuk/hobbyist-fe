@@ -10,7 +10,7 @@ import {
 
 import { art, other, sport, music } from '../images';
 
-export default function ClubPage({ navigation, route }) {
+export default function MapClubPage({ navigation, route }) {
   let image = {};
 
   if (route.params.currentClub.clubType === 'sport') {
@@ -94,16 +94,6 @@ export default function ClubPage({ navigation, route }) {
           marginBottom: 20,
         }}
       >{`Closing Time ${route.params.currentClub.hours[openDay].close}:00`}</Text>
-      <Text
-        style={{
-          color: '#431275',
-          fontSize: 20,
-          textAlign: 'center',
-          marginTop: 20,
-        }}
-      >
-        Contact Info
-      </Text>
 
       <TouchableOpacity onPress={() => navigation.navigate('BusinessPage')}>
         <View
@@ -142,19 +132,3 @@ const styles = StyleSheet.create({
     margin: 20,
   },
 });
-
-// <Text
-//         style={{
-//           color: '#431275',
-//           fontSize: 20,
-//           textAlign: 'center',
-//         }}
-//       >{`Opening Time ${route.params.currentClub.hours[openDay].open}:00`}</Text>
-//       <Text
-//         style={{
-//           color: '#431275',
-//           fontSize: 20,
-//           textAlign: 'center',
-//           marginBottom: 20,
-//         }}
-//       >{`Closing Time ${route.params.currentClub.hours[openDay].close}:00`}</Text>

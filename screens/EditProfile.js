@@ -10,52 +10,31 @@ import {
 import RNPickerSelect from 'react-native-picker-select';
 import { Formik } from 'formik';
 import { Entypo } from '@expo/vector-icons';
-import { AuthContext } from '../context';
 
-export default function CreateBusinessAccount({ navigation }) {
+export default function EditProfile({ navigation }) {
   const [secure, setSecure] = useState(true);
-  const { signUp, useToken } = useContext(AuthContext);
   return (
     <View style={styles.container}>
       <Formik
         initialValues={{
           email: '',
-          username: '',
-          businessName: '',
           password: '',
           phoneNumber: '',
         }}
-        onSubmit={(values) => {
-          console.log(values);
-          navigation.navigate('CreateBusinessAccount2');
-        }}
+        onSubmit={(values) => console.log(values)}
       >
         {({ handleChange, handleBlur, handleSubmit, values }) => (
           <View>
             <Text style={styles.enterDetailsTitle}></Text>
 
-            <Text>Enter a User Name:</Text>
-            <TextInput
-              style={styles.input}
-              placeholder="username"
-              onChangeText={handleChange('username')}
-              required
-            />
-            <Text>Enter your Business Name:</Text>
-            <TextInput
-              style={styles.input}
-              placeholder="Business Name"
-              onChangeText={handleChange('businessName')}
-              required
-            />
-            <Text>Enter your Email:</Text>
+            <Text>Edit Email:</Text>
             <TextInput
               style={styles.input}
               placeholder="Email"
               onChangeText={handleChange('email')}
               required
             />
-            <Text>Enter your Password:</Text>
+            <Text>Edit password:</Text>
             <View style={styles.input}>
               <TextInput
                 placeholder="Password"

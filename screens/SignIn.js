@@ -5,7 +5,7 @@ import {
   Text,
   Button,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 import { AuthContext } from '../context';
 import { Ionicons } from '@expo/vector-icons';
@@ -13,7 +13,7 @@ import { Entypo } from '@expo/vector-icons';
 import { Formik } from 'formik';
 
 export default function SignIn({ navigation }) {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, useToken } = useContext(AuthContext);
   const [secure, setSecure] = useState(true);
   const [selectedTab, setSelectedTab] = useState('personal');
   console.log(selectedTab);
@@ -23,9 +23,12 @@ export default function SignIn({ navigation }) {
       <Formik
         initialValues={{
           username: '',
-          password: ''
+          password: '',
         }}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={(values) => {
+          console.log(values);
+          signIn();
+        }}
       >
         {({ handleChange, handleBlur, handleSubmit, values }) => (
           <View>
@@ -100,7 +103,7 @@ export default function SignIn({ navigation }) {
             </View>
 
             <TouchableOpacity
-              onPress={() => signIn()}
+              onPress={handleSubmit}
               style={{ alignItems: 'center' }}
             >
               <View style={styles.button}>
@@ -108,7 +111,6 @@ export default function SignIn({ navigation }) {
                   style={{ color: 'white', fontSize: 20 }}
                   accessibilityLabel="Sign In"
                   title="Sign In"
-                  onPress={() => navigation.navigate('homepage')}
                 >
                   Sign In
                 </Text>
@@ -116,29 +118,19 @@ export default function SignIn({ navigation }) {
             </TouchableOpacity>
 
             <TouchableOpacity
-              onPress={handleSubmit}
+              onPress={() => navigation.navigate('signUp')}
               style={{ alignItems: 'center' }}
             >
-              <View
-                style={styles.button}
-                accessibilityLabel="Submit"
-                title="Submit"
-                onPress={handleSubmit}
-              >
-                <Text style={{ color: 'white', fontSize: 20 }}>
-                  Submit Entries (Temp)
+              <View style={styles.button}>
+                <Text
+                  style={{ color: 'white', fontSize: 20 }}
+                  accessibilityLabel="Sign In"
+                  title="Sign In"
+                >
+                  Create an Account
                 </Text>
               </View>
             </TouchableOpacity>
-
-            <View>
-              <Button
-                color="#841584"
-                accessibilityLabel="Create an Account"
-                title="Create an Account"
-                onPress={() => navigation.navigate('signUp')}
-              />
-            </View>
           </View>
         )}
       </Formik>
@@ -152,7 +144,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#e1dce6',
-    borderRadius: 20
+    borderRadius: 20,
   },
   input: {
     flexDirection: 'row',
@@ -165,15 +157,15 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     height: 40,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   inputText: {
-    flex: 1
+    flex: 1,
   },
   loginWith: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 20
+    marginBottom: 20,
   },
   button: {
     flexDirection: 'row',
@@ -186,18 +178,18 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     marginBottom: 20,
     width: 200,
-    position: 'relative'
+    position: 'relative',
   },
   LoginTabs: {
     flexDirection: 'row',
-    margin: 10
+    margin: 10,
   },
   BusinessTab: {
     margin: 10,
     backgroundColor: 'rgb(4,122,156)',
     padding: 10,
     borderRadius: 3,
-    color: 'white'
+    color: 'white',
   },
 
   PersonalTab: {
@@ -205,13 +197,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgb(0,166,159)',
     padding: 10,
     borderRadius: 3,
-    color: 'white'
+    color: 'white',
   },
   MuteTab: {
     margin: 10,
     backgroundColor: 'grey',
     padding: 10,
     borderRadius: 3,
-    color: 'white'
-  }
+    color: 'white',
+  },
 });
