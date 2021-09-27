@@ -12,7 +12,7 @@ import { Formik } from 'formik';
 import { Entypo } from '@expo/vector-icons';
 import { AuthContext } from '../context';
 
-export default function CreateBusinessAccount({ navigation }) {
+export default function CreateBusinessAccount2({ navigation }) {
   const [secure, setSecure] = useState(true);
   const { signUp, useToken } = useContext(AuthContext);
   return (
@@ -27,7 +27,7 @@ export default function CreateBusinessAccount({ navigation }) {
         }}
         onSubmit={(values) => {
           console.log(values);
-          navigation.navigate('CreateBusinessAccount2');
+          signUp();
         }}
       >
         {({ handleChange, handleBlur, handleSubmit, values }) => (

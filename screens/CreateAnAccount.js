@@ -7,36 +7,34 @@ export default function createAnAccount({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.selectAccount}>Select Account Type:</Text>
-      <View style={styles.accountBoxBusiness}>
-        <Text style={styles.accountTitle}>Business Account</Text>
-        <TouchableOpacity>
-          <Entypo
-            name="location"
-            size={100}
-            color="white"
-            onPress={() => navigation.navigate('CreateBusinessAccount')}
-          />
-        </TouchableOpacity>
-        <Text style={styles.accountDescription}>
-          With a business account, you can list your club/hobby to your members.
-        </Text>
-      </View>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('CreatePersonalAccount')}
+      >
+        <View style={styles.accountBoxPersonal}>
+          <Text style={styles.accountTitle}>Personal Account</Text>
 
-      <View style={styles.accountBoxPersonal}>
-        <Text style={styles.accountTitle}>Personal Account</Text>
-        <TouchableOpacity>
-          <FontAwesome5
-            name="search-location"
-            size={100}
-            color="white"
-            onPress={() => navigation.navigate('CreatePersonalAccount')}
-          />
-        </TouchableOpacity>
-        <Text style={styles.accountDescription}>
-          With a personal account, you can search for any club/hobby in your
-          area.
-        </Text>
-      </View>
+          <FontAwesome5 name="search-location" size={100} color="white" />
+
+          <Text style={styles.accountDescription}>
+            With a personal account, you can search for any club/hobby in your
+            area.
+          </Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('CreateBusinessAccount')}
+      >
+        <View style={styles.accountBoxBusiness}>
+          <Text style={styles.accountTitle}>Business Account</Text>
+
+          <Entypo name="location" size={100} color="white" />
+
+          <Text style={styles.accountDescription}>
+            With a business account, you can list your club/hobby to your
+            members.
+          </Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 }

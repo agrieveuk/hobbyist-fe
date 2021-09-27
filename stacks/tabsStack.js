@@ -13,8 +13,8 @@ const TabsStackScreen = () => (
       headerShown: false,
       tabBarActiveTintColor: 'white',
       tabBarInactiveTintColor: 'lightgray',
-      tabBarActiveBackgroundColor: '#5C6BC0',
-      tabBarInactiveBackgroundColor: '#939dd5',
+      tabBarActiveBackgroundColor: '#8949d9',
+      tabBarInactiveBackgroundColor: '#aa7cd6'
     }}
   >
     <Tabs.Screen
@@ -26,7 +26,7 @@ const TabsStackScreen = () => (
             <AntDesign name="home" size={24} color="white" />
           </View>
         ),
-        title: 'Home',
+        title: 'Home'
       }}
     />
 
@@ -39,7 +39,7 @@ const TabsStackScreen = () => (
             <AntDesign name="search1" size={24} color="white" />
           </View>
         ),
-        title: 'Search',
+        title: 'Search'
       }}
     />
   </Tabs.Navigator>

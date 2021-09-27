@@ -3,6 +3,7 @@ import Homepage from '../screens/Homepage';
 import ClubPage from '../screens/ClubPage';
 import { FontAwesome } from '@expo/vector-icons';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import BusinessPage from '../screens/BusinessPage';
 
 const HomeStack = createNativeStackNavigator();
 
@@ -10,7 +11,7 @@ const HomeStackScreen = () => (
   <HomeStack.Navigator
     screenOptions={({ navigation }) => ({
       headerStyle: {
-        backgroundColor: '#5C6BC0',
+        backgroundColor: '#8949d9',
       },
       headerTintColor: '#fff',
       headerRight: function headerRight() {
@@ -37,7 +38,15 @@ const HomeStackScreen = () => (
       name="ClubPage"
       component={ClubPage}
       options={({ route }) => ({
-        title: route.params.club,
+        title: route.params.currentClub.clubName,
+        headerTitleAlign: 'center',
+      })}
+    />
+    <HomeStack.Screen
+      name="BusinessPage"
+      component={BusinessPage}
+      options={({ route }) => ({
+        title: route.params.user.name,
         headerTitleAlign: 'center',
       })}
     />

@@ -14,7 +14,7 @@ import { Entypo } from '@expo/vector-icons';
 import { getBusinessUserByClub } from '../api';
 import { art, other, sport, music } from '../images';
 
-export default function BusinessPage({ navigation, route }) {
+export default function BusinessMapPage({ navigation, route }) {
   const { signOut } = useContext(AuthContext);
   const [user, setUser] = useState(route.params.user);
   const [clubList, setClubList] = useState(route.params.user.clubs);

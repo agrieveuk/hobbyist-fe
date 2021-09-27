@@ -11,7 +11,7 @@ import { getBusinessUserByClub } from '../api';
 
 import { art, other, sport, music } from '../images';
 
-export default function ClubPage({ navigation, route }) {
+export default function MapClubPage({ navigation, route }) {
   const [user, setUser] = useState({});
   let image = {};
   console.log(user);
@@ -174,7 +174,7 @@ export default function ClubPage({ navigation, route }) {
       </View>
       <TouchableOpacity
         onPress={() =>
-          navigation.navigate('BusinessPage', {
+          navigation.navigate('BusinessMapPage', {
             user,
           })
         }
