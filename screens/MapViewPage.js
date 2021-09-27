@@ -5,7 +5,7 @@ import {
   View,
   Dimensions,
   TouchableOpacity,
-  ImageBackground
+  ImageBackground,
 } from 'react-native';
 import MapView from 'react-native-maps';
 
@@ -39,7 +39,7 @@ export default function MapViewPage({ navigation, route }) {
           latitude: 53.476203,
           longitude: -2.247281,
           latitudeDelta: 0.2,
-          longitudeDelta: 0.2
+          longitudeDelta: 0.2,
         }}
       >
         {route.params.mapSearchData.map((club, index) => (
@@ -47,7 +47,7 @@ export default function MapViewPage({ navigation, route }) {
             key={index}
             coordinate={{
               latitude: club.location.coordinates[0],
-              longitude: club.location.coordinates[1]
+              longitude: club.location.coordinates[1],
             }}
             title={club.clubName}
             description={club.clubType}
@@ -55,10 +55,10 @@ export default function MapViewPage({ navigation, route }) {
               club.clubType === 'art'
                 ? 'red'
                 : club.clubType === 'sport'
-                  ? 'lightblue'
-                  : club.clubType === 'music'
-                    ? 'lightgreen'
-                    : 'tan'
+                ? 'lightblue'
+                : club.clubType === 'music'
+                ? 'lightgreen'
+                : 'tan'
             }
             onPress={() => setCurrentClub(club)}
           />
@@ -81,7 +81,7 @@ export default function MapViewPage({ navigation, route }) {
                 <Text
                   style={{
                     color: '#431275',
-                    fontSize: 20
+                    fontSize: 20,
                   }}
                 >
                   {currentClub.clubName}
@@ -97,7 +97,7 @@ export default function MapViewPage({ navigation, route }) {
                   style={styles.image}
                   imageStyle={{
                     borderBottomLeftRadius: 20,
-                    borderBottomRightRadius: 20
+                    borderBottomRightRadius: 20,
                   }}
                 ></ImageBackground>
               </View>
@@ -113,12 +113,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'flex-start'
+    justifyContent: 'flex-start',
+    backgroundColor: '#e1dce6',
   },
   map: {
     marginTop: 20,
     width: '90%',
-    height: '50%'
+    height: '50%',
   },
   card: {
     justifyContent: 'center',
@@ -130,16 +131,16 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 1, height: 3 },
     shadowOpacity: 0.4,
     shadowRadius: 3,
-    borderRadius: 20
+    borderRadius: 20,
   },
   imageContainer: {
     height: 100,
-    width: '100%'
+    width: '100%',
   },
   image: {
     flex: 1,
-    justifyContent: 'center'
-  }
+    justifyContent: 'center',
+  },
 });
 
 // <MapView.Marker

@@ -4,6 +4,7 @@ import MapViewPage from '../screens/MapViewPage';
 import Search from '../screens/Search';
 import { FontAwesome } from '@expo/vector-icons';
 import MapClubPage from '../screens/MapClubPage';
+import BusinessMapPage from '../screens/BusinessMapPage';
 
 const SearchStack = createNativeStackNavigator();
 
@@ -11,7 +12,7 @@ const SearchStackScreen = () => (
   <SearchStack.Navigator
     screenOptions={({ navigation }) => ({
       headerStyle: {
-        backgroundColor: '#8949d9'
+        backgroundColor: '#8949d9',
       },
       headerTintColor: '#fff',
       headerRight: function headerRight() {
@@ -23,7 +24,7 @@ const SearchStackScreen = () => (
             onPress={() => navigation.toggleDrawer()}
           />
         );
-      }
+      },
     })}
   >
     <SearchStack.Screen
@@ -41,7 +42,15 @@ const SearchStackScreen = () => (
       component={MapClubPage}
       options={({ route }) => ({
         title: route.params.currentClub.clubName,
-        headerTitleAlign: 'center'
+        headerTitleAlign: 'center',
+      })}
+    />
+    <SearchStack.Screen
+      name="BusinessMapPage"
+      component={BusinessMapPage}
+      options={({ route }) => ({
+        title: route.params.user.name,
+        headerTitleAlign: 'center',
       })}
     />
   </SearchStack.Navigator>
